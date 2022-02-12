@@ -1,0 +1,143 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: cursive;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #01443c;
+}
+.box
+{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 40px 0;
+
+    border-radius: 30px;
+}
+
+.box .card
+{
+    position: relative;
+    width: 300px;
+    height: 400px;
+    margin: 20px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pic
+{
+    top: 50%;
+    left: 50%;
+    width: 270px;
+}
+
+.img
+{
+    width: 50px;
+    height: 50px;
+}
+
+.box .card .content
+{
+    position: absolute;
+    bottom: -160px;
+    width: 100%;
+    height: 160px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    flex-direction: column;
+    backdrop-filter: blur(15px);
+    box-shadow: 0 -10px 10px rgba(0,0,0,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+
+    transition: bottom .5s;
+    transition-delay: .8s;
+    
+}
+
+.box .card:hover .content
+{
+    bottom: 0;
+    border-style: none;
+}
+
+
+.box .card .content .contentbox h3
+{
+    color: #d8f000;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 500 bold;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px 0 15px;
+    line-height: 1.1em;
+    transition: 0.5s;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition-delay: 0.6s;
+}
+
+
+.box .card:hover .content .contentbox h3
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.box .card:hover .content .contentbox h3 span
+{
+    font-size: 12px;
+    font-weight: 300;
+    text-transform: initial;
+}
+
+.box .card .content .sci
+{
+    position: relative;
+    bottom: 10px;
+    display: flex;
+}
+
+
+.box .card .content .sci li
+{
+    list-style: none;
+    margin: 0 10px;
+    transform: translateY(40px);
+    transition: .5s;
+    opacity: 0;
+    transition-delay: calc(.2s * var(--i));
+}
+
+
+.box .card:hover .content .sci li
+{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+.box .card:hover .content .sci li a
+{
+    color: #fff;
+    font-size: 24px;
+}
